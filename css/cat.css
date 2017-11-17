@@ -1,0 +1,187 @@
+#body {
+    background: #F3F3F3;
+}
+
+#backtohome {
+    font-weight: bolder;
+    position: fixed;
+    left: -90px;
+    bottom: 50px;
+    border: 1px solid #242424;
+    line-height: 30px;
+    font-size: 16px;
+    padding: 5px;
+    background: white;
+}
+
+#backtohome span {
+    padding: 0 5px;
+}
+
+#back {
+    display: inline-block;
+    width: 90px;
+}
+
+#cattitle {
+    padding: 20px 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background: url('../images/cattitilebak.jpg');
+}
+
+#cattitle>div {
+    height: 100px;
+}
+
+#cattitle>div>img {
+    height: 100px;
+}
+
+#cattitle_chat {
+    transition: background 1s;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: rgba(200, 200, 200, 0.8);
+}
+
+#cattitle_adm {
+    border: 1px solid black;
+    background: rgba(100, 100, 100, 0.5);
+}
+
+#catchatdiv {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    height: 400px;
+    width: 600px;
+    border: 1px solid #A9A9A9;
+    z-index: 1000;
+}
+
+#catchatdivtitle {
+    position: relative;
+    flex: 1;
+    background: #242424;
+    color: white;
+    cursor: move;
+}
+
+#catchatdivclose {
+    display: inline-block;
+    color: white;
+    position: absolute;
+    font-size: 16px;
+    top: 10px;
+    right: 12px;
+    font-weight: bold;
+}
+
+#catchatdivcontent {
+    flex: 6;
+}
+
+#catchatdivinputdiv {
+    border-top: 5px dotted #F44A5A;
+    flex: 2;
+    display: flex;
+    padding-top: 5PX;
+}
+
+#catchatdivinput {
+    flex: 4;
+}
+
+#catchatdivinputsubdiv {
+    flex: 1;
+}
+
+#catcontent {
+    margin: 30px 0;
+    padding: 0 100px;
+}
+
+.notetype {
+    font-size: 16px;
+    margin: 20px 0;
+    padding: 5px 0;
+    font-weight: 700;
+}
+
+.currentnotetype {
+    background: #F00F24 !important;
+    color: white;
+}
+
+#catcontentleft {
+    border: 1px solid black;
+    background: white;
+    padding: 0;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: sticky;
+    top: 5px;
+}
+
+#catcontentright {
+    padding-left: 20px;
+}
+
+.onenotediv {
+    margin-bottom: 10px;
+    border: 1px solid black;
+    background: white;
+}
+
+.onenotediv span {
+    margin: 0 20px 0 5px;
+}
+
+.onenotediv>div {
+    margin: 5px;
+}
+
+.onenotetype {
+    color: #B89EA6;
+}
+
+.onenotenickname {
+    color: #0F88EB;
+}
+
+.onenotetitle {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.onenotecontent {
+    font-size: 16px;
+}
+
+.onenoteicon {
+    height: 16px;
+    width: 16px;
+}
+
+#createnote {
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #585858;
+    background: #0F88EB;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+#loginModal {
+    position: fixed;
+    top: 30px;
+    left: 35%;
+    border: 1px solid gray;
+}

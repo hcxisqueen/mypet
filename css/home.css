@@ -1,0 +1,31 @@
+#homeimg {
+    height: 600px;
+}
+
+#homelist {
+    height: 500px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+#homelist ul {
+    list-style: none;
+}
+
+#homelist ul li {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#listtitle {
+    color: deepskyblue;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.dongtai::before {
+    content: '\2764';
+}

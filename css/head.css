@@ -1,0 +1,63 @@
+#headdiv {
+    margin: 10px 0 20px 0;
+}
+
+#userhomediv {
+    line-height: 31px;
+    display: flex;
+    flex-direction: row-reverse;
+    color: #242424;
+}
+
+#loginbtn {
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #585858;
+    background: #0F88EB;
+    padding: 0 8px;
+}
+
+.canclick {
+    cursor: pointer;
+}
+
+.flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pad15 {
+    padding: 0 15px;
+}
+
+#user_homename {
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+#user_homeicon {
+    height: 30px;
+    width: 30px;
+}
+
+#userhome_show {
+    position: relative;
+    padding: 0 10px;
+}
+
+#userhome_hidden {
+    font-weight: bold;
+    display: none;
+    border: 1px solid #242424;
+    z-index: 2000;
+    background: white;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.userhomehiddenone {}
