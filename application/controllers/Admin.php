@@ -15,6 +15,7 @@ function captcha(){
     echo '验证码不正确，请重新输入';
    }
   }else{
+      /*11111111111111111*/
    $this->load->view('index');
   }
  }
