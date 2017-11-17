@@ -22,6 +22,6 @@ function captcha(){
 
  function show_captcha(){ //此方法用于显示验证码图片，归一个view中的img的src调用
   $this->authcode->show();
-     //121323
+     //1213233242
  }
 }
