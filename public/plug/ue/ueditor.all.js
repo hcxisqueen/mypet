@@ -7267,7 +7267,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
                 });
 
             }
-            return '<html><head>' + (me.options.charset ? '<meta http-equiv="Content-Type" content="text/html; charset=' + me.options.charset + '"/>' : '')
+            return '<html><head>' + (me.options.charset ? '<meta http-equiv="ContentModel-Type" content="text/html; charset=' + me.options.charset + '"/>' : '')
                 + (headHtmlForIE9 || me.document.getElementsByTagName('head')[0].innerHTML) + headHtml.join('\n') + '</head>'
                 + '<body ' + (ie && browser.version < 9 ? 'class="view"' : '') + '>' + me.getContent(null, null, true) + '</body></html>';
         },
@@ -8241,7 +8241,7 @@ UE.ajax = function() {
             }
         };
         if (method == "POST") {
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader('ContentModel-Type', 'application/x-www-form-urlencoded');
             xhr.send(submitStr);
         } else {
             xhr.send(null);

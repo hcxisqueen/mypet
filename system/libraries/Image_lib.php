@@ -1548,9 +1548,9 @@ class CI_Image_lib {
 	 */
 	public function image_display_gd($resource)
 	{
-		header('Content-Disposition: filename='.$this->source_image.';');
-		header('Content-Type: '.$this->mime_type);
-		header('Content-Transfer-Encoding: binary');
+		header('ContentModel-Disposition: filename='.$this->source_image.';');
+		header('ContentModel-Type: '.$this->mime_type);
+		header('ContentModel-Transfer-Encoding: binary');
 		header('Last-Modified: '.gmdate('D, d M Y H:i:s', time()).' GMT');
 
 		switch ($this->image_type)

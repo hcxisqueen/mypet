@@ -730,7 +730,7 @@ class CI_Email {
 			'name'		=> array($file, $newname),
 			'disposition'	=> empty($disposition) ? 'attachment' : $disposition,  // Can also be 'inline'  Not sure if it matters
 			'type'		=> $mime,
-			'content'	=> chunk_split(base64_encode($file_content)),
+			'ContentModel' => chunk_split(base64_encode($file_content)),
 			'multipart'	=> 'mixed'
 		);
 
@@ -740,7 +740,7 @@ class CI_Email {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Set and return attachment Content-ID
+	 * Set and return attachment ContentModel-ID
 	 *
 	 * Useful for attached inline pictures
 	 *
@@ -1273,8 +1273,8 @@ class CI_Email {
 		{
 			case 'plain':
 
-				$hdr .= 'Content-Type: text/plain; charset='.$this->charset.$this->newline
-					.'Content-Transfer-Encoding: '.$this->_get_encoding();
+				$hdr .= 'ContentModel-Type: text/plain; charset='.$this->charset.$this->newline
+					.'ContentModel-Transfer-Encoding: '.$this->_get_encoding();
 
 				if ($this->_get_protocol() === 'mail')
 				{
@@ -1292,24 +1292,24 @@ class CI_Email {
 
 				if ($this->send_multipart === FALSE)
 				{
-					$hdr .= 'Content-Type: text/html; charset='.$this->charset.$this->newline
-						.'Content-Transfer-Encoding: quoted-printable';
+					$hdr .= 'ContentModel-Type: text/html; charset='.$this->charset.$this->newline
+						.'ContentModel-Transfer-Encoding: quoted-printable';
 				}
 				else
 				{
 					$boundary = uniqid('B_ALT_');
-					$hdr .= 'Content-Type: multipart/alternative; boundary="'.$boundary.'"';
+					$hdr .= 'ContentModel-Type: multipart/alternative; boundary="'.$boundary.'"';
 
 					$body .= $this->_get_mime_message().$this->newline.$this->newline
 						.'--'.$boundary.$this->newline
 
-						.'Content-Type: text/plain; charset='.$this->charset.$this->newline
-						.'Content-Transfer-Encoding: '.$this->_get_encoding().$this->newline.$this->newline
+						.'ContentModel-Type: text/plain; charset='.$this->charset.$this->newline
+						.'ContentModel-Transfer-Encoding: '.$this->_get_encoding().$this->newline.$this->newline
 						.$this->_get_alt_message().$this->newline.$this->newline
 						.'--'.$boundary.$this->newline
 
-						.'Content-Type: text/html; charset='.$this->charset.$this->newline
-						.'Content-Transfer-Encoding: quoted-printable'.$this->newline.$this->newline;
+						.'ContentModel-Type: text/html; charset='.$this->charset.$this->newline
+						.'ContentModel-Transfer-Encoding: quoted-printable'.$this->newline.$this->newline;
 				}
 
 				$this->_finalbody = $body.$this->_prep_quoted_printable($this->_body).$this->newline.$this->newline;
@@ -1333,7 +1333,7 @@ class CI_Email {
 			case 'plain-attach':
 
 				$boundary = uniqid('B_ATC_');
-				$hdr .= 'Content-Type: multipart/mixed; boundary="'.$boundary.'"';
+				$hdr .= 'ContentModel-Type: multipart/mixed; boundary="'.$boundary.'"';
 
 				if ($this->_get_protocol() === 'mail')
 				{
@@ -1343,8 +1343,8 @@ class CI_Email {
 				$body .= $this->_get_mime_message().$this->newline
 					.$this->newline
 					.'--'.$boundary.$this->newline
-					.'Content-Type: text/plain; charset='.$this->charset.$this->newline
-					.'Content-Transfer-Encoding: '.$this->_get_encoding().$this->newline
+					.'ContentModel-Type: text/plain; charset='.$this->charset.$this->newline
+					.'ContentModel-Transfer-Encoding: '.$this->_get_encoding().$this->newline
 					.$this->newline
 					.$this->_body.$this->newline.$this->newline;
 
@@ -1359,14 +1359,14 @@ class CI_Email {
 				if ($this->_attachments_have_multipart('mixed'))
 				{
 					$atc_boundary = uniqid('B_ATC_');
-					$hdr .= 'Content-Type: multipart/mixed; boundary="'.$atc_boundary.'"';
+					$hdr .= 'ContentModel-Type: multipart/mixed; boundary="'.$atc_boundary.'"';
 					$last_boundary = $atc_boundary;
 				}
 
 				if ($this->_attachments_have_multipart('related'))
 				{
 					$rel_boundary = uniqid('B_REL_');
-					$rel_boundary_header = 'Content-Type: multipart/related; boundary="'.$rel_boundary.'"';
+					$rel_boundary_header = 'ContentModel-Type: multipart/related; boundary="'.$rel_boundary.'"';
 
 					if (isset($last_boundary))
 					{
@@ -1389,16 +1389,16 @@ class CI_Email {
 				$body .= $this->_get_mime_message().$this->newline.$this->newline
 					.'--'.$last_boundary.$this->newline
 
-					.'Content-Type: multipart/alternative; boundary="'.$alt_boundary.'"'.$this->newline.$this->newline
+					.'ContentModel-Type: multipart/alternative; boundary="'.$alt_boundary.'"'.$this->newline.$this->newline
 					.'--'.$alt_boundary.$this->newline
 
-					.'Content-Type: text/plain; charset='.$this->charset.$this->newline
-					.'Content-Transfer-Encoding: '.$this->_get_encoding().$this->newline.$this->newline
+					.'ContentModel-Type: text/plain; charset='.$this->charset.$this->newline
+					.'ContentModel-Transfer-Encoding: '.$this->_get_encoding().$this->newline.$this->newline
 					.$this->_get_alt_message().$this->newline.$this->newline
 					.'--'.$alt_boundary.$this->newline
 
-					.'Content-Type: text/html; charset='.$this->charset.$this->newline
-					.'Content-Transfer-Encoding: quoted-printable'.$this->newline.$this->newline
+					.'ContentModel-Type: text/html; charset='.$this->charset.$this->newline
+					.'ContentModel-Transfer-Encoding: quoted-printable'.$this->newline.$this->newline
 
 					.$this->_prep_quoted_printable($this->_body).$this->newline.$this->newline
 					.'--'.$alt_boundary.'--'.$this->newline.$this->newline;
@@ -1465,12 +1465,12 @@ class CI_Email {
 				: basename($this->_attachments[$i]['name'][0]);
 
 			$body .= '--'.$boundary.$this->newline
-				.'Content-Type: '.$this->_attachments[$i]['type'].'; name="'.$name.'"'.$this->newline
-				.'Content-Disposition: '.$this->_attachments[$i]['disposition'].';'.$this->newline
-				.'Content-Transfer-Encoding: base64'.$this->newline
-				.(empty($this->_attachments[$i]['cid']) ? '' : 'Content-ID: <'.$this->_attachments[$i]['cid'].'>'.$this->newline)
+				.'ContentModel-Type: '.$this->_attachments[$i]['type'].'; name="'.$name.'"'.$this->newline
+				.'ContentModel-Disposition: '.$this->_attachments[$i]['disposition'].';'.$this->newline
+				.'ContentModel-Transfer-Encoding: base64'.$this->newline
+				.(empty($this->_attachments[$i]['cid']) ? '' : 'ContentModel-ID: <'.$this->_attachments[$i]['cid'].'>'.$this->newline)
 				.$this->newline
-				.$this->_attachments[$i]['content'].$this->newline;
+				.$this->_attachments[$i]['ContentModel'].$this->newline;
 		}
 
 		// $name won't be set if no attachments were appended,
@@ -1483,7 +1483,7 @@ class CI_Email {
 	/**
 	 * Prep Quoted Printable
 	 *
-	 * Prepares string for Quoted-Printable Content-Transfer-Encoding
+	 * Prepares string for Quoted-Printable ContentModel-Transfer-Encoding
 	 * Refer to RFC 2045 http://www.ietf.org/rfc/rfc2045.txt
 	 *
 	 * @param	string

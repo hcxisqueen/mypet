@@ -133,11 +133,11 @@ if ( ! function_exists('force_download'))
 		}
 
 		// Generate the server headers
-		header('Content-Type: '.$mime);
-		header('Content-Disposition: attachment; filename="'.$filename.'"');
+		header('ContentModel-Type: '.$mime);
+		header('ContentModel-Disposition: attachment; filename="'.$filename.'"');
 		header('Expires: 0');
-		header('Content-Transfer-Encoding: binary');
-		header('Content-Length: '.$filesize);
+		header('ContentModel-Transfer-Encoding: binary');
+		header('ContentModel-Length: '.$filesize);
 		header('Cache-Control: private, no-transform, no-store, must-revalidate');
 
 		// If we have raw data - just dump it

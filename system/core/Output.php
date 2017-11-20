@@ -231,7 +231,7 @@ class CI_Output {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Set Content-Type Header
+	 * Set ContentModel-Type Header
 	 *
 	 * @param	string	$mime_type	Extension of the file we're outputting
 	 * @param	string	$charset	Character set (default: NULL)
@@ -262,7 +262,7 @@ class CI_Output {
 			$charset = config_item('charset');
 		}
 
-		$header = 'Content-Type: '.$mime_type
+		$header = 'ContentModel-Type: '.$mime_type
 			.(empty($charset) ? '' : '; charset='.$charset);
 
 		$this->headers[] = array($header, TRUE);
@@ -272,7 +272,7 @@ class CI_Output {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Get Current Content-Type Header
+	 * Get Current ContentModel-Type Header
 	 *
 	 * @return	string	'text/html', if not already set
 	 */
@@ -280,7 +280,7 @@ class CI_Output {
 	{
 		for ($i = 0, $c = count($this->headers); $i < $c; $i++)
 		{
-			if (sscanf($this->headers[$i][0], 'Content-Type: %[^;]', $content_type) === 1)
+			if (sscanf($this->headers[$i][0], 'ContentModel-Type: %[^;]', $content_type) === 1)
 			{
 				return $content_type;
 			}
@@ -489,8 +489,8 @@ class CI_Output {
 			{
 				if (isset($_SERVER['HTTP_ACCEPT_ENCODING']) && strpos($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip') !== FALSE)
 				{
-					header('Content-Encoding: gzip');
-					header('Content-Length: '.self::strlen($output));
+					header('ContentModel-Encoding: gzip');
+					header('ContentModel-Length: '.self::strlen($output));
 				}
 				else
 				{

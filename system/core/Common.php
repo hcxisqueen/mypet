@@ -504,9 +504,9 @@ if ( ! function_exists('set_status_header'))
 				201	=> 'Created',
 				202	=> 'Accepted',
 				203	=> 'Non-Authoritative Information',
-				204	=> 'No Content',
-				205	=> 'Reset Content',
-				206	=> 'Partial Content',
+				204	=> 'No ContentModel',
+				205	=> 'Reset ContentModel',
+				206	=> 'Partial ContentModel',
 
 				300	=> 'Multiple Choices',
 				301	=> 'Moved Permanently',

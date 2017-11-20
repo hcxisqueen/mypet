@@ -179,8 +179,8 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 		$r = $this->parseRequest();
 		$payload = '<?xml version="1.0" encoding="'.$this->xmlrpc_defencoding.'"?'.'>'."\n".$this->debug_msg.$r->prepare_response();
 
-		header('Content-Type: text/xml');
-		header('Content-Length: '.strlen($payload));
+		header('ContentModel-Type: text/xml');
+		header('ContentModel-Length: '.strlen($payload));
 		exit($payload);
 	}
 

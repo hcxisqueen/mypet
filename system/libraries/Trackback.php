@@ -306,8 +306,8 @@ class CI_Trackback {
 		// Transfer the data
 		fputs($fp, 'POST '.$path." HTTP/1.0\r\n");
 		fputs($fp, 'Host: '.$target['host']."\r\n");
-		fputs($fp, "Content-type: application/x-www-form-urlencoded\r\n");
-		fputs($fp, 'Content-length: '.strlen($data)."\r\n");
+		fputs($fp, "ContentModel-type: application/x-www-form-urlencoded\r\n");
+		fputs($fp, 'ContentModel-length: '.strlen($data)."\r\n");
 		fputs($fp, "Connection: close\r\n\r\n");
 		fputs($fp, $data);
 

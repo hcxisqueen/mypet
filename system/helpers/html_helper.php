@@ -56,7 +56,7 @@ if ( ! function_exists('heading'))
 	 *
 	 * Generates an HTML heading tag.
 	 *
-	 * @param	string	content
+	 * @param	string	ContentModel
 	 * @param	int	heading level
 	 * @param	string
 	 * @return	string
@@ -352,7 +352,7 @@ if ( ! function_exists('meta'))
 		// or a multidimensional one, we need to do a little prepping.
 		if ( ! is_array($name))
 		{
-			$name = array(array('name' => $name, 'content' => $content, 'type' => $type, 'newline' => $newline));
+			$name = array(array('name' => $name, 'ContentModel' => $content, 'type' => $type, 'newline' => $newline));
 		}
 		elseif (isset($name['name']))
 		{
@@ -365,7 +365,7 @@ if ( ! function_exists('meta'))
 		{
 			$type		= (isset($meta['type']) && $meta['type'] !== 'name')	? 'http-equiv' : 'name';
 			$name		= isset($meta['name'])					? $meta['name'] : '';
-			$content	= isset($meta['content'])				? $meta['content'] : '';
+			$content	= isset($meta['ContentModel'])				? $meta['ContentModel'] : '';
 			$newline	= isset($meta['newline'])				? $meta['newline'] : "\n";
 
 			$str .= '<meta '.$type.'="'.$name.'" content="'.$content.'" />'.$newline;

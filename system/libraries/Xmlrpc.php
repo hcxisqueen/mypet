@@ -729,10 +729,10 @@ class XML_RPC_Client extends CI_Xmlrpc
 		$r = "\r\n";
 		$op = 'POST '.$this->path.' HTTP/1.0'.$r
 			.'Host: '.$this->server.$r
-			.'Content-Type: text/xml'.$r
+			.'ContentModel-Type: text/xml'.$r
 			.(isset($this->username, $this->password) ? 'Authorization: Basic '.base64_encode($this->username.':'.$this->password).$r : '')
 			.'User-Agent: '.$this->xmlrpcName.$r
-			.'Content-Length: '.strlen($msg->payload).$r.$r
+			.'ContentModel-Length: '.strlen($msg->payload).$r.$r
 			.$msg->payload;
 
 		stream_set_timeout($fp, $this->timeout); // set timeout for subsequent operations
