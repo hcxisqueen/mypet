@@ -357,4 +357,12 @@ $(function() {
         document.getElementById('note_url').value = note_url;
     }
     //发表帖子end
+
+
+
+    //详情页start
+    $(".list").click(function(){
+        window.location.href = detailList;
+    });
+    //详情页end
 })

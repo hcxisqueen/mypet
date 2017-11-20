@@ -75,7 +75,6 @@ $(document).ready(function() {
             $('#user_passwd').next('span').html('密码必填！');
             return;
         }
-        console.log(8);
 
         //进入数据处理阶段：AJAX
         $.ajax({

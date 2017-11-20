@@ -19,14 +19,13 @@ class LoginModel extends CI_Model
         $query = $this->db->query($sql);
         // 以数组形式返回查询结果
        $row=$query->result_array();
-
-             //检查账号是否存在
-             $row=$row[0];
+        //检查账号是否存在
+        $row=$row[0];
         if(!$row){
             // echo '账号不存在'; 
             //PHP里面如何输出JSON格式的数据：json_encode(数组);
             $row['res'] = 'no_exit_admin_name';
-          echo json_encode($row);
+            echo json_encode($row);
             exit;
         }
         //检查密码是否正确

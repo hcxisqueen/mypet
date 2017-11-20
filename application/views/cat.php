@@ -83,7 +83,7 @@ $nick_name=$catnote['nick_name'];
 $content=$catnote['note_content'];
 $likesimg= base_url()."images/likes.png";
 $commentimg=base_url()."images/comment.png";
-            echo "<div class='canclick onenotediv col-md-12 col-sm-12'><div class='onenotetype'>来自类别：$type</div><div class='onenotenickname'>$nick_name</div><div class='onenotetitle'>$title</div>
+            echo "<div class='canclick onenotediv col-md-12 col-sm-12 list'><div class='onenotetype'>来自类别：$type</div><div class='onenotenickname'>$nick_name</div><div class='onenotetitle'>$title</div>
 <div class='onenotecontent'>$content</div>
             <div class='onenotetime'>$time</div>
 <div><img src='$likesimg' class='onenoteicon'><span class='onenotelikes'>$likes</span><img src='$commentimg' class='onenoteicon'><span class='onenotecomment'>$comment</span></div></div>
@@ -111,7 +111,6 @@ $commentimg=base_url()."images/comment.png";
 
 <!-- 编辑模块start -->
 <div id="container" style="display:none; z-index: 3000">
-11111
 	<!-- 发布按钮 -->
 	
 	<div class="col-md-4 flex_center loginBox" id="loginModal" style="background:gray;">
@@ -192,6 +191,7 @@ var getnoteurl="<?php echo site_url('GetCatNote')?>";
 var baseurl="<?php echo base_url()?>";
 var ajaxUrl="<?php echo site_url('PublishController')?>"
 var isLogin="<?php echo site_url('IsLogin')?>"
+var detailList="<?php echo site_url('DetailListController')?>"
 </script>
 </body>
 </html>
