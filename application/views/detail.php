@@ -23,17 +23,28 @@ defined('BASEPATH') or exit('No direct script access allowed');
     $this->load->view('head');
     ?>
 
-	<div class="pet_content col-md-10">
+	<div class="pet_content col-md-12">
 		<div class="pet_content_block">
 			<article data-am-widget="paragraph" class="am-paragraph am-paragraph-default pet_content_article" data-am-paragraph="{ tableScrollable: true, pureview: true }">
 				<input type="hidden" name="user_nick" id="user_nick" value="">
 				<input type="hidden" name="news_id" id="news" value="">
-				<h1 class="pet_article_title">啦啦啦</h1>
-				<div class="pet_article_user_time">发表于：2017/11/06</div>
-				<img src="<?php echo base_url()?>images/catnote1.jpg"><p class=paragraph-default-p>都进入房间热开工日过几天热交换规划用途和亚特噢成为</p>
+				<p id="pet_article_title">啦啦啦</p>
+
+                <div class="col-lg-3" >
+                    <img src="<?php echo base_url()?>images/catnote1.jpg">
+
+                </div>
+                <div class="col-lg-8 articletext" >
+                    <p class=paragraph-default-p>都进入房间热开工日过几天热交换规划用途和亚特噢成为斤eijfreijgijgdfjsvgfkbgb成都市空间发的开始发热酷热凯美瑞v的客人沟通葛军</p>
+
+                </div>
 
 			</article>
-			<ul class="like_share_block">
+            <div class="pet_article_user_time"> 发表于：2017/11/06</div>
+
+            <div class="pet_article_user_time"> 发表于：2017/11/06</div>
+
+            <ul class="like_share_block">
 				<li id="praise" news_id='111'><a class="link_share_button"  href="###"><i class="iconfont share_ico_link">&#xe62f;</i><span id="praise_num">324324</span></a></li>
 				<li id="commentli"><a class="link_share_button"  href="###"><i class="iconfont share_ico_wx"></i><span id="comment">评论</span></a></li>
 				<li id="shareli"><a class="link_share_button" id="friend" href="#"><i class="iconfont share_ico_pyq">&#xe62e;</i><span id="share">分享</span></a></li>
@@ -68,9 +79,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</div>
 
 		</div>
-    <div class="col-md-2" id="author">
+    <!--<div class="col-md-2" id="author">
 
-    </div>
+    </div>-->
 	</div>
 
 
