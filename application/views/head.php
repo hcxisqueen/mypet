@@ -1,7 +1,7 @@
 
 
 <link rel="stylesheet" href="<?php echo base_url()?>css/head.css">
-	<div class="container-fluid">
+	<div class="container-fluid setbackground col-md-12">
 	<div class="row" id="headdiv">
 <div class="col-md-6"><img src="<?php echo base_url()?>images/title.png" alt=""></div>
 <?php 

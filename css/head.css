@@ -1,12 +1,16 @@
 #headdiv {
     margin: 10px 0 20px 0;
+    background: white;
 }
-
+.setbackground{
+    background: white;
+}
 #userhomediv {
     line-height: 31px;
     display: flex;
     flex-direction: row-reverse;
     color: #242424;
+
 }
 
 #loginbtn {

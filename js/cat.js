@@ -362,6 +362,7 @@ $(function() {
 
     //详情页start
     $(".list").click(function(){
+        console.log(666);
         window.location.href = detailList;
     });
     //详情页end
